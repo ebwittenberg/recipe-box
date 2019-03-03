@@ -31,13 +31,23 @@ function addRecipe(recipeName) {
     dropdown.appendChild(option);
 }
 
-// prompt user to add ingregients
+// save ingredients user enters in a unordered list
+let saveIngredientButton = document.querySelector('.save-ingredient');
 
-let addIngredientsButton = document.querySelector('.add-ingredients');
+saveIngredientButton.addEventListener('click', addIngredient);
 
-addIngredientsButton.addEventListener('click', addIngredients);
+let ingredientList = document.querySelector('.ingredients-list')
 
-// 
-function addIngredients() {
+function addIngredient() {
+    // save recipe name (value of user input)
+    let inputIngredient = document.querySelector(".ingredient");
+    let ingredient = inputIngredient.value;
 
+    // clears ingredient input box for next entry
+    inputIngredient.value = '';
+
+    // add ingredient to ingredients list
+    let li = document.createElement('li');
+    li.textContent = ingredient;
+    ingredientList.appendChild(li);
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form>
+    <form class='recipe-name'>
         Recipe Name: <input type="text" class="name">
 
         <input type="button" value="Submit" class="submit-button">
@@ -19,8 +19,18 @@
     </select>
 
     <div class="add-ingredients">
-        <h3><u>Add ingredients</u></h3>
+        <h3><u>Add ingredients for recipe name here</u></h3>
     </div>
+
+    <form class="ingredient-box">
+        Ingredient: <input type="text" class="ingredient">
+
+        <input type="button" value="Save" class="save-ingredient">
+    </form>
+
+    <ul class="ingredients-list">
+
+    </ul>
 
     <script src="main.js"></script>
 </body>
