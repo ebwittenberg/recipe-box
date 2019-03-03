@@ -5,5 +5,7 @@
 .add-ingredients h3:hover {
     color: blue;
 }
-
+.ingredients {
+    border: 2px solid red;
+}
 

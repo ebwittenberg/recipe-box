@@ -57,3 +57,13 @@ function addIngredient() {
     li.textContent = ingredient;
     ingredientList.appendChild(li);
 }
+// hide pasta ingredients list when dropdown value is not pasta
+dropdown.addEventListener('change', hideIngredients);
+// hide ingredients list with class name pasta
+
+
+function hideIngredients() {
+    let ingredientsDiv = document.querySelector('.ingredients');
+    ingredientsDiv.style.position = 'absolute';
+    ingredientsDiv.style.left = '-1000px';
+}
