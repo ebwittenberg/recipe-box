@@ -27,6 +27,7 @@ function addRecipe(recipeName) {
     let option = document.createElement('option');
     // text content of option is the recipe name
     option.textContent = recipeName;
+    option.classList.add(recipeName);
     // append the recipe name option into the dropdown
     dropdown.appendChild(option);
 }
@@ -39,6 +40,11 @@ saveIngredientButton.addEventListener('click', addIngredient);
 let ingredientList = document.querySelector('.ingredients-list')
 
 function addIngredient() {
+    // print current dropdown value to the console
+    console.log(dropdown.value);
+
+    // give ingredients list the same class name as current dropdown recipe
+    ingredientList.classList.add(dropdown.value);
     // save recipe name (value of user input)
     let inputIngredient = document.querySelector(".ingredient");
     let ingredient = inputIngredient.value;
