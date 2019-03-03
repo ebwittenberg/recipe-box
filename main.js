@@ -7,7 +7,7 @@ function recipeName() {
     
     // clears recipe name input box for next entry
     inputRecipeName.value = '';
-    
+
     // calls add recipe function, passing it the recipe name
     addRecipe(recipeName);
 }
@@ -29,4 +29,15 @@ function addRecipe(recipeName) {
     option.textContent = recipeName;
     // append the recipe name option into the dropdown
     dropdown.appendChild(option);
+}
+
+// prompt user to add ingregients
+
+let addIngredientsButton = document.querySelector('.add-ingredients');
+
+addIngredientsButton.addEventListener('click', addIngredients);
+
+// 
+function addIngredients() {
+
 }
