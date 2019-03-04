@@ -54,17 +54,23 @@ function addIngredient() {
     li.textContent = ingredient;
     ingredientsList.appendChild(li);
 }
-// hide ingredients list with class name pasta
+
+let ingredientsBoxes = [];
 
 
 // create div and ul  for ingredients with recipe name as class name
 function createIngredientBox(nameOfRecipe) {
+
     ingredientsBox = document.createElement('div');
     // give ingredients box a class name that is name of the recipe
     ingredientsBox.classList.add(nameOfRecipe);
+    ingredientsBox.classList.add('ingredients-box')
     ingredientsBox.style.border = "2px solid green";
     ingredientsBox.style.height = '200px';
     body.appendChild(ingredientsBox);
+    
+    // add the ingredients div to ingredients boxes array
+    ingredientsBoxes.push(ingredientsBox);
 
     ingredientsList = document.createElement('ul');
     // gives ul same class name as current dropdown value
@@ -79,11 +85,8 @@ function createIngredientBox(nameOfRecipe) {
 dropdown.addEventListener('change', hideIngredients);
 
 function hideIngredients() {
-    console.log('Hello');
     // show only the ingredient div where class name = dropdown.value
     // create variable for ingredients box div that has same class name as dropdown.value
-    let currentIngredientsBox = document.querySelector(`div.${dropdown.value}`);
-    console.log(currentIngredientsBox);
 
 
 
