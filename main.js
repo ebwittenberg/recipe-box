@@ -38,13 +38,9 @@ function addRecipe(recipeName) {
 let saveIngredientButton = document.querySelector('.save-ingredient');
 
 saveIngredientButton.addEventListener('click', addIngredient);
-let ingredientList = document.querySelector('.ingredients-list')
 
 // adds ingredient to unordered list
 function addIngredient() {
-
-    // give ingredients list the same class name as current dropdown recipe
-    ingredientList.classList.add(dropdown.value);
 
     // save recipe name (value of user input)
     let inputIngredient = document.querySelector(".ingredient");
@@ -56,25 +52,24 @@ function addIngredient() {
     // add ingredient to ingredients list
     let li = document.createElement('li');
     li.textContent = ingredient;
-    ingredientList.appendChild(li);
+    ingredientsList.appendChild(li);
 }
-// hide pasta ingredients list when dropdown value is not pasta
-dropdown.addEventListener('change', hideIngredients);
 // hide ingredients list with class name pasta
 
 
-function hideIngredients() {
-    let ingredientsDiv = document.querySelector('.ingredients');
-    ingredientsDiv.style.position = 'absolute';
-    ingredientsDiv.style.left = '-1000px';
-}
-
-// create div for ingredients with recipe name as class name
+// create div and ul  for ingredients with recipe name as class name
 function createIngredientBox(nameOfRecipe) {
-    let ingredientsBox = document.createElement('div');
+    ingredientsBox = document.createElement('div');
     // give ingredients box a class name that is name of the recipe
     ingredientsBox.classList.add(nameOfRecipe);
     ingredientsBox.style.border = "2px solid green";
     ingredientsBox.style.height = '200px';
     body.appendChild(ingredientsBox);
+
+    ingredientsList = document.createElement('ul');
+    // gives ul same class name as current dropdown value
+    ingredientsList.classList.add(dropdown.value);
+
+    // add ul as child element of ingredients div
+    ingredientsBox.appendChild(ingredientsList);
 }
