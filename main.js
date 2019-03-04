@@ -68,8 +68,23 @@ function createIngredientBox(nameOfRecipe) {
 
     ingredientsList = document.createElement('ul');
     // gives ul same class name as current dropdown value
-    ingredientsList.classList.add(dropdown.value);
+    // ingredientsList.classList.add(dropdown.value);
 
     // add ul as child element of ingredients div
     ingredientsBox.appendChild(ingredientsList);
+}
+
+// look for change in dropdown menu
+
+dropdown.addEventListener('change', hideIngredients);
+
+function hideIngredients() {
+    console.log('Hello');
+    // show only the ingredient div where class name = dropdown.value
+    // create variable for ingredients box div that has same class name as dropdown.value
+    let currentIngredientsBox = document.querySelector(`div.${dropdown.value}`);
+    console.log(currentIngredientsBox);
+
+
+
 }
