@@ -96,6 +96,13 @@ function hideIngredients() {
         }
     })
 
+}
+dropdown.addEventListener('change', ingredientInstruction);
+submit.addEventListener('click', ingredientInstruction);
 
+function ingredientInstruction() {
+    const instructions = document.querySelector('div.add-ingredients h3');
+    instructions.textContent = 'Add ingredients for: ';
+    instructions.textContent += dropdown.value;
 
 }
