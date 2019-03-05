@@ -42,7 +42,7 @@ saveIngredientButton.addEventListener('click', addIngredient);
 // adds ingredient to unordered list
 function addIngredient() {
 
-    // save recipe name (value of user input)
+    // save ingredient name (value of user input)
     let inputIngredient = document.querySelector(".ingredient");
     let ingredient = inputIngredient.value;
 
@@ -73,8 +73,6 @@ function createIngredientBox(nameOfRecipe) {
     ingredientsBoxes.push(ingredientsBox);
 
     ingredientsList = document.createElement('ul');
-    // gives ul same class name as current dropdown value
-    // ingredientsList.classList.add(dropdown.value);
 
     // add ul as child element of ingredients div
     ingredientsBox.appendChild(ingredientsList);
