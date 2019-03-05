@@ -1,3 +1,8 @@
+// initialize variables
+let dropdown = document.querySelector('.recipe-dropdown');
+let body = document.querySelector('body');
+let submit = document.querySelector('.submit-button');
+
 // returns user entered recipe name
 function recipeName() {
     // save recipe name (value of user input)
