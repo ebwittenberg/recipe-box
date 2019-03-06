@@ -1,5 +1,6 @@
 // initialize variables
 let saveIngredientButton = document.querySelector('.save-ingredient');
+// creates array of existing ingredients divs
 let ingredientsBoxes = [];
 
 
@@ -12,21 +13,30 @@ function addIngredient() {
 
     // clears ingredient input box for next entry
     inputIngredient.value = '';
+    let currentBox = [];
+    ingredientsBoxes.forEach(box => {
+        if (box.classList[0] === dropdown.value) {
+            currentBox = box;
+        }
+    })
+    let currentUl = currentBox.childNodes[0];
 
-    // add ingredient to ingredients list
+    // add ingredient to current ingredients list
     let li = document.createElement('li');
     li.textContent = ingredient;
-    ingredientsList.appendChild(li);
+    currentUl.appendChild(li);
 }
 
 // create div and ul  for ingredients with recipe name as class name
+// called from addRecipe
 function createIngredientBox(nameOfRecipe) {
 
+    // this is div element that has ingredients ul/li in it, tied to recipe name
     ingredientsBox = document.createElement('div');
     // give ingredients box a class name that is name of the recipe
     ingredientsBox.classList.add(nameOfRecipe);
     ingredientsBox.classList.add('ingredients-box')
-    ingredientsBox.style.border = "2px solid green";
+    // ingredientsBox.style.border = "2px solid green";
     ingredientsBox.style.height = '200px';
     body.appendChild(ingredientsBox);
 
