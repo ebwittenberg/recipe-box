@@ -5,3 +5,11 @@ saveIngredientButton.addEventListener('click', addIngredient);
 dropdown.addEventListener('change', hideIngredients);
 dropdown.addEventListener('change', ingredientInstruction);
 submit.addEventListener('click', ingredientInstruction);
+
+document.addEventListener('keydown', handleEnter);
+
+function handleEnter() {
+    inputRecipeName.addEventListener('focus', function() {
+        console.log('Focused');
+    })
+}

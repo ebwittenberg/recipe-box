@@ -36,7 +36,7 @@ function createIngredientBox(nameOfRecipe) {
     // give ingredients box a class name that is name of the recipe
     ingredientsBox.classList.add(nameOfRecipe);
     ingredientsBox.classList.add('ingredients-box')
-    // ingredientsBox.style.border = "2px solid green";
+    ingredientsBox.style.border = "2px solid green";
     ingredientsBox.style.height = '200px';
     body.appendChild(ingredientsBox);
 

@@ -2,11 +2,11 @@
 let dropdown = document.querySelector('.recipe-dropdown');
 let body = document.querySelector('body');
 let submit = document.querySelector('.submit-button');
+let inputRecipeName = document.querySelector(".name");
 
 // returns user entered recipe name
 function recipeName() {
     // save recipe name (value of user input)
-    let inputRecipeName = document.querySelector(".name");
     let recipeName = inputRecipeName.value;
     
     // clears recipe name input box for next entry
